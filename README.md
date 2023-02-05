@@ -14,3 +14,6 @@ A class named StoppageDetector that predicts stoppages from a GPS data file. The
 5. If the distance is greater than the distance_range, then the result list is updated with the start_timestamp, end_timestamp and a list of dictionaries containing the previous and current locations.
 6. The result list is then returned as a list of tuples.
 7. The result list is then converted to a Pandas dataframe and written to a CSV file.
+
+# Implementation
+The Haversine formula is used to calculate the distance between two GPS coordinates. The script loops through the GPS data and compares the distances between consecutive GPS points. If the distance is less than or equal to the distance_range parameter, the end timestamp is updated and the current location is stored. If the distance is greater than the distance_range, the current stoppage is added to the results and a new stoppage starts.
